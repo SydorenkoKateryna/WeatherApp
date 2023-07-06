@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  StatusBar,
-  // statusBarStyle,
-} from 'react-native'
+import { SafeAreaView, StyleSheet, Text, View, StatusBar } from 'react-native'
 import { Feather } from '@expo/vector-icons'
 import RowText from '../components/RowText'
 
@@ -29,11 +22,6 @@ const CurrentWeather = () => {
         <Feather name={'sun'} size={100} color={'#ffffff'} />
         <Text style={temp}>6</Text>
         <Text style={feels}>Feels like 5</Text>
-
-        {/* <View style={highLowWrapper}>
-          <Text style={highLow}>High: 8</Text>
-          <Text style={highLow}>Low: 6</Text>
-        </View> */}
         <RowText
           messageOne={'High: 8'}
           messageTwo={'Low: 6'}
@@ -42,10 +30,6 @@ const CurrentWeather = () => {
           messageTwoStyles={highLow}
         />
       </View>
-      {/* <View style={bodyWrapper}>
-        <Text style={description}>Its sunny</Text>
-        <Text style={message}>Its perfect t-shirt weather</Text>
-      </View> */}
       <RowText
         messageOne={'Its sunny'}
         messageTwo={'Its perfect t-shirt weather'}
@@ -60,7 +44,7 @@ const CurrentWeather = () => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: '#8AB9E3',
+    backgroundColor: '#8ab9e3',
   },
   container: {
     flex: 1,
@@ -86,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
     paddingLeft: 25,
-    marginBottom: 40,
+    marginBottom: 60,
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,

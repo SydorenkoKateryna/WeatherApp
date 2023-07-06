@@ -1,13 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Ionicons, MaterialCommunityIcons, Feather } from '@expo/vector-icons'
+import { MaterialCommunityIcons, Feather } from '@expo/vector-icons'
 
 const ListItem = ({ dt_txt, min, max, condition }) => {
   const { item, date, tempWrapper, temp } = styles
 
   return (
     <View style={item}>
-      {/* <Ionicons name={'rainy-outline'} size={50} color={'rgba(0, 0, 0, 0.2)'} /> */}
       <Feather name={'cloud-rain'} size={50} color={'#ffffff'} />
       <Text style={date}>{dt_txt}</Text>
       <View style={tempWrapper}>
@@ -32,7 +31,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     borderRadius: 20,
-    // backgroundColor: 'rgba(97, 160, 217, 0.6)',
     backgroundColor: 'rgba(35, 45, 81, 0.2)',
   },
   tempWrapper: {

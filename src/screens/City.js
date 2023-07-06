@@ -7,7 +7,6 @@ import {
   StatusBar,
   ImageBackground,
 } from 'react-native'
-import { Feather } from '@expo/vector-icons'
 import IconText from '../components/IconText'
 
 const City = () => {
@@ -40,8 +39,6 @@ const City = () => {
           <Text style={[countryName, cityText]}>UK</Text>
 
           <View style={[populationWrapper, rowLayout]}>
-            {/* <Feather name={'user'} size={50} color={'#ffffff'} />
-            <Text style={populationText}>8000</Text> */}
             <IconText
               iconName={'user'}
               iconColor={'#232d51'}
@@ -51,16 +48,12 @@ const City = () => {
           </View>
 
           <View style={[riseSetWrapper, rowLayout]}>
-            {/* <Feather name={'sunrise'} size={50} color={'#ffffff'} />
-            <Text style={riseSetText}>10:46:58am</Text> */}
             <IconText
               iconName={'sunrise'}
               iconColor={'#ffffff'}
               bodyText={'10:46:58am'}
               bodyTextStyles={riseSetText}
             />
-            {/* <Feather name={'sunset'} size={50} color={'#ffffff'} />
-            <Text style={riseSetText}>17:28:15pm</Text> */}
             <IconText
               iconName={'sunset'}
               iconColor={'#ffffff'}
@@ -97,19 +90,14 @@ const styles = StyleSheet.create({
     color: '#232d51',
   },
   populationWrapper: {
-    // flexDirection: 'row',
-    // alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30,
   },
   populationText: {
     fontSize: 25,
-    // marginLeft: 7.5,
     color: '#232d51',
   },
   riseSetWrapper: {
-    // flexDirection: 'row',
-    // alignItems: 'center',
     justifyContent: 'space-around',
     marginTop: 30,
   },
