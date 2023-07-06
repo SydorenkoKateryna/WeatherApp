@@ -12,9 +12,9 @@ import { Feather } from '@expo/vector-icons'
 const CurrentWeather = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <StatusBar backgroundColor="#9fc5e8" barStyle={statusBarStyle} />
+      <StatusBar backgroundColor="#8AB9E3" barStyle={statusBarStyle} />
       <View style={styles.container}>
-        <Feather name="sun" size={100} color="black" />
+        <Feather name="sun" size={100} color="rgb(255, 209, 71)" />
         <Text style={styles.temp}>6</Text>
         <Text style={styles.feels}>Feels like 5</Text>
 
@@ -34,7 +34,7 @@ const CurrentWeather = () => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#8AB9E3',
   },
   container: {
     flex: 1,
@@ -42,15 +42,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   temp: {
-    color: '#1a1a20',
+    color: '#ffffff',
     fontSize: 48,
   },
   feels: {
-    color: '#1a1a20',
+    color: '#ffffff',
     fontSize: 30,
   },
   highLow: {
-    color: '#1a1a20',
+    color: '#ffffff',
     fontSize: 20,
   },
   highLowWrapper: {
@@ -63,11 +63,11 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   description: {
-    color: '#1a1a20',
+    color: 'rgba(255, 255, 255, 0.6)',
     fontSize: 48,
   },
   message: {
-    color: '#1a1a20',
+    color: 'rgba(255, 255, 255, 0.6)',
     fontSize: 30,
   },
 })
