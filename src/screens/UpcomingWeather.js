@@ -5,12 +5,10 @@ import {
   View,
   Text,
   StatusBar,
-  // statusBarStyle,
   FlatList,
-  // Image,
   ImageBackground,
 } from 'react-native'
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
+import ListItem from '../components/ListItem'
 
 const DATA = [
   {
@@ -60,25 +58,9 @@ const Empty = () => (
   </View>
 )
 
-const Item = ({ dt_txt, min, max, condition }) => (
-  <View style={styles.item}>
-    <Ionicons name={'rainy-outline'} size={50} color={'rgba(0, 0, 0, 0.2)'} />
-    <Text style={styles.date}>{dt_txt}</Text>
-    <View style={styles.tempWrapper}>
-      <Text style={styles.temp}>{max}</Text>
-      <MaterialCommunityIcons
-        name="slash-forward"
-        size={18}
-        color="rgba(255, 255, 255, 0.6)"
-      />
-      <Text style={styles.temp}>{min}</Text>
-    </View>
-  </View>
-)
-
 const UpcomingWeather = () => {
   const renderItem = ({ item }) => (
-    <Item
+    <ListItem
       condition={item.weather[0].main}
       dt_txt={item.dt_txt}
       min={Math.round((item.main.temp_min - 32) / 1.8)}
@@ -86,29 +68,25 @@ const UpcomingWeather = () => {
     />
   )
 
+  const { container, list, imageBackground } = styles
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={container}>
       <ImageBackground
         source={require('../../assets/upcoming-background.jpg')}
-        style={styles.imageBackground}
+        style={imageBackground}
       >
-        {/* <StatusBar backgroundColor="#8AB9E3" barStyle="light-content" /> */}
         <StatusBar
           translucent={true}
           backgroundColor="transparent"
           barStyle="light-content"
         />
-        {/* <Text>Upcoming Weather</Text> */}
-        {/* <Image source={require('../../assets/upcoming-background.jpg')} style={styles.image}/> */}
         <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={(item) => item.dt_txt}
-          // ItemSeparatorComponent={() => (
-          //   <View style={{ backgroundColor: '#ffffff', height: 1 }} />
-          // )}
           ListEmptyComponent={<Empty />}
-          style={styles.list}
+          style={list}
         />
       </ImageBackground>
     </SafeAreaView>
@@ -118,45 +96,15 @@ const UpcomingWeather = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // marginTop: StatusBar.currentHeight || 0,
     backgroundColor: '#8AB9E3',
   },
   list: {
     marginTop: StatusBar.currentHeight,
   },
-  item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    // borderWidth: 1,
-    // borderColor: 'rgba(255, 255, 255, 0.6)',
-    borderRadius: 20,
-    backgroundColor: 'rgba(97, 160, 217, 0.6)',
-  },
   empty: {
     padding: 20,
     color: 'rgba(255, 255, 255, 0.6)',
   },
-  tempWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  temp: {
-    color: '#ffffff',
-    fontSize: 20,
-  },
-  date: {
-    color: '#ffffff',
-    fontSize: 15,
-  },
-  // image: {
-  //   height: 100,
-  //   width: 100,
-  // },
   imageBackground: {
     flex: 1,
   },
